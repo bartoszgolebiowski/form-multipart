@@ -46,7 +46,7 @@ describe("ContactForm", () => {
       expect(
         screen.getByRole("contentinfo", { name: "step-1" })
       ).toBeInTheDocument();
-      userEvent.click(screen.getByRole("button", { name: /next/i }));
+      userEvent.click(screen.getByRole("button", { name: "Next" }));
       await waitFor(() =>
         expect(screen.queryAllByText(/required/i)).toHaveLength(2)
       );
@@ -76,7 +76,7 @@ describe("ContactForm", () => {
         initialValues.lastName
       );
 
-      userEvent.click(screen.getByRole("button", { name: /next/i }));
+      userEvent.click(screen.getByRole("button", { name: "Next" }));
       await waitForElementToBeRemoved(() =>
         screen.queryByText(/Person details/i)
       );
@@ -105,7 +105,7 @@ describe("ContactForm", () => {
         />
       );
 
-      userEvent.click(screen.getByRole("button", { name: /next/i }));
+      userEvent.click(screen.getByRole("button", { name: "Next" }));
       await waitForElementToBeRemoved(() =>
         screen.queryByText(/Person details/i)
       );
@@ -135,7 +135,7 @@ describe("ContactForm", () => {
         />
       );
 
-      userEvent.click(screen.getByRole("button", { name: /next/i }));
+      userEvent.click(screen.getByRole("button", { name: "Next" }));
       await waitForElementToBeRemoved(() =>
         screen.queryByText(/Person details/i)
       );
@@ -143,7 +143,7 @@ describe("ContactForm", () => {
       expect(
         screen.getByRole("contentinfo", { name: "step-2" })
       ).toBeInTheDocument();
-      userEvent.click(screen.getByRole("button", { name: /next/i }));
+      userEvent.click(screen.getByRole("button", { name: "Next" }));
       await waitFor(() =>
         expect(screen.queryAllByText(/required/i)).toHaveLength(3)
       );
@@ -169,7 +169,7 @@ describe("ContactForm", () => {
         />
       );
 
-      userEvent.click(screen.getByRole("button", { name: /next/i }));
+      userEvent.click(screen.getByRole("button", { name: "Next" }));
       await waitForElementToBeRemoved(() =>
         screen.queryByText(/Person details/i)
       );
@@ -177,7 +177,7 @@ describe("ContactForm", () => {
       expect(screen.getByLabelText(/email/i)).toHaveValue(initialValues.email);
       expect(screen.getByLabelText(/phone/i)).toHaveValue(initialValues.phone);
 
-      userEvent.click(screen.getByRole("button", { name: /next/i }));
+      userEvent.click(screen.getByRole("button", { name: "Next" }));
       await waitForElementToBeRemoved(() =>
         screen.queryByText(/Location details/i)
       );
@@ -209,11 +209,11 @@ describe("ContactForm", () => {
         />
       );
 
-      userEvent.click(screen.getByRole("button", { name: /next/i }));
+      userEvent.click(screen.getByRole("button", { name: "Next" }));
       await waitForElementToBeRemoved(() =>
         screen.queryByText(/Person details/i)
       );
-      userEvent.click(screen.getByRole("button", { name: /next/i }));
+      userEvent.click(screen.getByRole("button", { name: "Next" }));
       await waitForElementToBeRemoved(() =>
         screen.queryByText(/location details/i)
       );
@@ -247,11 +247,11 @@ describe("ContactForm", () => {
         />
       );
 
-      userEvent.click(screen.getByRole("button", { name: /next/i }));
+      userEvent.click(screen.getByRole("button", { name: "Next" }));
       await waitForElementToBeRemoved(() =>
         screen.queryByText(/Person details/i)
       );
-      userEvent.click(screen.getByRole("button", { name: /next/i }));
+      userEvent.click(screen.getByRole("button", { name: "Next" }));
       await waitForElementToBeRemoved(() =>
         screen.queryByText(/location details/i)
       );
@@ -285,11 +285,11 @@ describe("ContactForm", () => {
         />
       );
 
-      userEvent.click(screen.getByRole("button", { name: /next/i }));
+      userEvent.click(screen.getByRole("button", { name: "Next" }));
       await waitForElementToBeRemoved(() =>
         screen.queryByText(/Person details/i)
       );
-      userEvent.click(screen.getByRole("button", { name: /next/i }));
+      userEvent.click(screen.getByRole("button", { name: "Next" }));
       await waitForElementToBeRemoved(() =>
         screen.queryByText(/location details/i)
       );
@@ -339,7 +339,7 @@ describe("ContactForm", () => {
 
       await type(screen.getByLabelText(/first name/i), exampleValues.firstName);
       await type(screen.getByLabelText(/last name/i), exampleValues.lastName);
-      userEvent.click(screen.getByRole("button", { name: /next/i }));
+      userEvent.click(screen.getByRole("button", { name: "Next" }));
       await waitForElementToBeRemoved(() =>
         screen.queryByText(/Person details/i)
       );
@@ -348,7 +348,7 @@ describe("ContactForm", () => {
       await type(screen.getByLabelText(/code/i), exampleValues.code);
       await type(screen.getByLabelText(/email/i), exampleValues.email);
       await type(screen.getByLabelText(/phone/i), exampleValues.phone);
-      userEvent.click(screen.getByRole("button", { name: /next/i }));
+      userEvent.click(screen.getByRole("button", { name: "Next" }));
       await waitForElementToBeRemoved(() =>
         screen.queryByText(/location details/i)
       );
@@ -392,7 +392,7 @@ describe("ContactForm", () => {
       expect(
         screen.getByRole("contentinfo", { name: "step-1" })
       ).toBeInTheDocument();
-      userEvent.click(screen.getByRole("button", { name: /next/i }));
+      userEvent.click(screen.getByRole("button", { name: "Next" }));
 
       await waitForElementToBeRemoved(() =>
         screen.queryByText(/Person details/i)
@@ -400,7 +400,7 @@ describe("ContactForm", () => {
       expect(
         screen.getByRole("contentinfo", { name: "step-2" })
       ).toBeInTheDocument();
-      userEvent.click(screen.getByRole("button", { name: /next/i }));
+      userEvent.click(screen.getByRole("button", { name: "Next" }));
 
       await waitForElementToBeRemoved(() =>
         screen.queryByText(/location details/i)
