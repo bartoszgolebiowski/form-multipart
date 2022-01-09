@@ -1,26 +1,55 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import * as React from "react";
+import { Theme, ThemeProvider } from "theme-ui";
+import ContactForm, { Values } from "./ContactForm";
 
-function App() {
+import Layout from "./Layout";
+
+const theme: Theme = {
+  colors: {
+    text: "#111",
+    background: "#fff",
+    primary: "tomato",
+    secondary: "#3f3f3f",
+    muted: "#e0e0e0",
+    highlight: "#9f9f9f",
+    gray: "#6c6c6c",
+    accent: "#3f3f3f",
+  },
+  buttons: {
+    primary: {
+      color: "background",
+      bg: "primary",
+      "&:hover": {
+        bg: "text",
+      },
+    },
+    secondary: {
+      color: "background",
+      bg: "secondary",
+    },
+  },
+};
+
+const App = () => {
+  const handleSubmitFinal = (values: Values) => {
+    alert(JSON.stringify(values, null, 2));
+  };
+  const handleSubmitFirstStep = (values: Values) => {};
+  const handleSubmitSecondStep = (values: Values) => {};
+  const handleSubmitThirdStep = (values: Values) => {};
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <Layout>
+        <ContactForm
+          onSubmitFirstStep={handleSubmitFirstStep}
+          onSubmitSecondStep={handleSubmitSecondStep}
+          onSubmitThirdStep={handleSubmitThirdStep}
+          onSubmitFinal={handleSubmitFinal}
+        />
+      </Layout>
+    </ThemeProvider>
   );
-}
+};
 
 export default App;
